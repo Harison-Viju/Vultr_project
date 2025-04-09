@@ -2,7 +2,7 @@ import requests
 
 url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent"
 headers = {"Content-Type": "application/json"}
-api_key = "AIzaSyA0ybH14Kne8HjMxrC7YOCstJ5LwHTzi_0"
+api_key = "paste ur api key here"
 payload = {
     "contents": [
         {
