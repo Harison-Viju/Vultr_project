@@ -1,0 +1,211 @@
+/* Container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    width: 100%;
+    height: 100%; /* Full height to make sure it fits within the viewport */
+    
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent overflow outside the container */
+}
+
+/* Chat history box */
+.chat-box {
+    position: relative; /* Fixed position to ensure it stays at the top */
+    top: 10%; /* Adjust as needed for spacing from the top */
+    width: 90%;
+    height: 60%; /* Fixed height */
+    overflow-y: auto; /* Allows scrolling for the chat content */
+    display: flex;
+    flex-direction: column-reverse; /* Ensures new messages appear at the bottom */
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    background-color: #111111;
+    background-image: linear-gradient(
+      32deg,
+      rgba(8, 8, 8, 0.74) 30px,
+      transparent
+    );
+    background-size: 60px 60px;
+    background-position: -5px -5px;
+    border: 4px solid #000;
+    border-radius: 8px; /* Slightly rounded edges */
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 5px 5px 0 #000, 10px 10px 0 #4a90e2;
+
+    scrollbar-width: thin; /* For Firefox - thin scrollbar */
+    scrollbar-color: #4a90e2 #f4f4f4;
+}
+
+
+/* Spinner styling inside chatbox */
+.spinner {
+    position: absolute; /* Position relative to .chat-box */
+    top: 50%; /* Center vertically within the chatbox */
+    left: 50%; /* Center horizontally within the chatbox */
+    transform: translate(-50%, -50%); /* Adjust position to perfectly center */
+    width: 60px; /* Size suitable for chatbox area */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures spinner is above chatbox content */
+    background: none; /* Remove additional background to blend with chatbox */
+}
+
+/* Spinner element styles */
+.spinner span {
+    position: absolute;
+    top: 50%;
+    left: var(--left);
+    width: 35px;
+    height: 7px;
+    background: #ffffff;
+    animation: dominos 1s ease infinite;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+}
+
+/* Adjust span positions */
+.spinner span:nth-child(1) { --left: 80px; animation-delay: 0.125s; }
+.spinner span:nth-child(2) { --left: 70px; animation-delay: 0.3s; }
+.spinner span:nth-child(3) { --left: 60px; animation-delay: 0.425s; }
+.spinner span:nth-child(4) { --left: 50px; animation-delay: 0.54s; }
+.spinner span:nth-child(5) { --left: 40px; animation-delay: 0.665s; }
+.spinner span:nth-child(6) { --left: 30px; animation-delay: 0.79s; }
+.spinner span:nth-child(7) { --left: 20px; animation-delay: 0.915s; }
+.spinner span:nth-child(8) { --left: 10px; }
+
+/* Keyframe animation */
+@keyframes dominos {
+    50% {
+        opacity: 0.7;
+    }
+    75% {
+        transform: rotate(90deg);
+    }
+    80% {
+        opacity: 1;
+    }
+}
+/* Scrollbar for WebKit browsers (Chrome, Safari) */
+.chat-box::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: #4a90e2; /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: #0066cc; /* Scrollbar thumb color on hover */
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: #f4f4f4; /* Scrollbar track background */
+}
+
+/* Message styling */
+.message {
+    margin: 5px 0;
+    padding: 12px;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+    position: relative;
+
+    /* Shared gradient background */
+    background-color: hsla(240, 15%, 9%, 1);
+    background-image: radial-gradient(
+        at 88% 40%,
+        hsla(240, 15%, 9%, 1) 0px,
+        transparent 85%
+      ),
+      radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+      radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+      radial-gradient(at 0% 64%, hsl(189, 99%, 26%) 0px, transparent 85%),
+      radial-gradient(at 41% 94%, hsl(189, 97%, 36%) 0px, transparent 85%),
+      radial-gradient(at 100% 99%, hsl(188, 94%, 13%) 0px, transparent 85%);
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+    
+}
+
+/* User message */
+.message.you {
+    align-self: flex-end;
+    background-color: hsla(240, 15%, 9%, 1);
+    color: hsl(0, 0%, 100%); /* White text for visibility */
+}
+
+/* Bot message */
+.message.bot {
+    align-self: flex-start;
+    background-color: hsla(240, 15%, 9%, 1);
+    color: hsl(0, 0%, 83%); /* Softer white for distinction */
+}
+
+
+/* Input container */
+.input-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    top:15%;
+    padding: 10px;
+    justify-content: space-between;
+    margin-top: 0%;
+    border: 4px solid #000;
+    background-color: #fff;
+    box-shadow: 5px 5px 0 #000, 10px 10px 0 #4a90e2;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Text input styling */
+.input-box input {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-radius: 0;
+}
+
+/* Button styling */
+.input-box button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    outline: none;
+}
+
+.input-box button:hover {
+    background-color: #0066cc;
+    transform: scale(1.1);
+}
+
+/* Arrow Icon */
+.input-box button svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+

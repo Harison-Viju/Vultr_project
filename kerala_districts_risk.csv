@@ -1,0 +1,15 @@
+District,Param1,Param2,Param3,Param4,Param5,Risk Level
+Thiruvananthapuram,29,85,15,5,50,High Risk
+Kollam,21,40,2,30,1000,Low Risk
+Pathanamthitta,30,90,20,8,200,High Risk
+Alappuzha,20,35,1,40,1200,Low Risk
+Kottayam,28,80,18,10,300,High Risk
+Idukki,19,45,3,25,900,Low Risk
+Ernakulam,25,50,15,15,150,High Risk
+Thrissur,22,60,10,20,400,Low Risk
+Palakkad,18,55,5,35,500,Low Risk
+Malappuram,26,65,12,12,350,Low Risk
+Kozhikode,27,70,14,22,450,High Risk
+Wayanad,24,75,8,30,600,Low Risk
+Kannur,23,65,9,27,500,Low Risk
+Kasaragod,29,85,15,5,50,High Risk

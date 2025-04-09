@@ -1,0 +1,171 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  /* Map container */
+  .map {
+    width: 50%;
+    height: 50%;
+    margin-left: 5px;
+    border-color: black;
+    border-radius: 8px;
+    border: 4px solid #bdc3c7; /* A light gray border */
+    box-shadow: 0 0 0 3px #fff, /* White outer "glow" */
+                inset 0 0 5px rgba(0, 0, 0, 0.1);
+    background-clip: padding-box;
+  }
+  
+  /* Chat toggle button */
+  .dash-button {
+    width: 9em;
+    height: 3em;
+    background-color: transparent;
+    border: 0;
+    top: 50%;
+    right: 0;
+    position: fixed;
+    z-index: 100; /* Ensure the button is above the map */
+    cursor: pointer;
+  }
+  
+  /* Blur background effect */
+  .blur-background {
+    filter: blur(8px);
+    pointer-events: none; /* Prevent interactions with blurred elements */
+    transition: filter 0.3s ease;
+  }
+  
+  /* Card styles */
+  .card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 500px;
+    height: 50%;
+    width:50%;
+    padding: 1.5rem;
+    background-color: hsla(240, 15%, 9%, 1);
+    background-image: radial-gradient(
+        at 88% 40%,
+        hsla(240, 15%, 9%, 1) 0px,
+        transparent 85%
+      ),
+      radial-gradient(at 49% 30%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+      radial-gradient(at 14% 26%, hsla(240, 15%, 9%, 1) 0px, transparent 85%),
+      radial-gradient(at 0% 64%, hsl(189, 99%, 26%) 0px, transparent 85%),
+      radial-gradient(at 41% 94%, hsl(189, 97%, 36%) 0px, transparent 85%),
+      radial-gradient(at 100% 99%, hsl(188, 94%, 13%) 0px, transparent 85%);
+    border-radius: 1rem;
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+    z-index: 200; /* Ensure the card is above everything */
+  }
+  
+  /* Card Close Button */
+  .card .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 201;
+  }
+  
+  .card .close-button:hover {
+    color: #ff3333;
+    transform: scale(1.1);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+
+  /* CSV Upload Container */
+.csv-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right:0;
+    top: 10%; /* Position above the chat input box */
+    width: 30%; /* Match chat-box width */
+    padding: 20px;
+    background-color: #fff;
+    border: 2px dashed hsl(189, 92%, 58%); /* Dashed border for file input */
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.2);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    cursor: pointer; /* Indicate clickability */
+}
+
+.csv-upload:hover {
+    border-color: hsl(189, 99%, 36%);
+    background-color: hsla(189, 92%, 95%);
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.csv-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.csv-table th,
+.csv-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.csv-table th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.csv-table-container {
+    margin-top: 20px;
+}
